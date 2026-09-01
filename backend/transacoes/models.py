@@ -15,7 +15,7 @@ class Transacao(models.Model):
     descricao = models.CharField(max_length=200)
     valor = models.DecimalField(max_digits=10,decimal_places=2)
     data = models.DateField()
-    observacao = models.CharField(max_length=200)
+    observacao = models.CharField(max_length=200,blank=True,null=True)
     tipo = models.CharField(max_length=10,choices=TIPO_CHOICES)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES, default='PENDENTE')
     usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
