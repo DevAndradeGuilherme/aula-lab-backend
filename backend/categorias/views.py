@@ -8,3 +8,9 @@ def listar_categorias(request):
     categorias = Categoria.objects.all()
     serializer = CategoriaSerializer(categorias, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def listar_categorias_despesas(request):
+    categorias = Categoria.objects.filter(tipo='Despesa')
+    serializer = CategoriaSerializer(categorias, many=True)
+    return Response(serializer.data)
