@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import listar_categorias, listar_categorias_despesas
+from .views import categorias_lista, listar_categorias_despesas, categoria_detalhe
 
 
 urlpatterns = [
-    path('categorias/', listar_categorias),
-    path('categorias/despesas/', listar_categorias_despesas)
+    path('categorias/', categorias_lista),
+    path('categorias/despesas/', listar_categorias_despesas),
+    path('categorias/<int:id>/', categoria_detalhe),
 ]
